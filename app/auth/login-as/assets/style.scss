@@ -1,0 +1,49 @@
+/* 
+==================================
+============== TAGS ==============
+==================================
+*/
+
+p.dim {
+     color: #d9d9d9;
+}
+
+/* 
+==================================
+============= STYLES =============
+==================================
+*/
+
+.full-page-selection-container {
+     display: flex;
+     text-align: center;
+     .full-page-selection-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 48px;
+          width: 50%;
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+     }
+     .full-page-selection-item:first-child {
+          background-image: url('./images/ATC.png');
+     }
+
+     .full-page-selection-item:last-child {
+          background-image: url('./images/Pilot.png');
+     }
+
+     width: 100vw;
+     height: 100vh;
+     color: white;
+}
+
+/* 
+==================================
+========== MEDIA QUERIES =========
+==================================
+*/
