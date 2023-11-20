@@ -1,0 +1,22 @@
+button {
+  outline: none;
+  border: none;
+  background: none;
+  transition: background ease 0.2s;
+  cursor: pointer;
+  border-radius: 2px;
+  font-weight: 500;
+}
+button.primary {
+  background: #c90019;
+}
+button.secondary {
+  background: #232b38;
+}
+button.lg {
+  font-size: 24px;
+  padding: 25px 70px;
+}
+button.lg:hover {
+  background: #8f0012;
+}/*# sourceMappingURL=style.css.map */
