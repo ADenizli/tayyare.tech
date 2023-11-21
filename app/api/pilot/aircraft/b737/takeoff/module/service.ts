@@ -4,6 +4,7 @@ import TakeoffModuleErrors from './errors';
 
 export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInformationsDTO) => {
      if (!depICAO) return { error: 'TM01', description: TakeoffModuleErrors['TM01'] };
+     if (!arrICAO) return { error: 'TM02', description: TakeoffModuleErrors['TM02'] };
 
      // Weather requests
      const depMetar = await SFetchMetar({ icao: depICAO });
