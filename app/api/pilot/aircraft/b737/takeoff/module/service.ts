@@ -1,3 +1,4 @@
+import { SFetchAirportInformation } from '@/app/api/pilot/airport/module/service';
 import { SFetchMetar } from '../../../../weather/module/service';
 import STakeoffInformationsDTO from '../dto/STakeoffDTO';
 import TakeoffModuleErrors from './errors';
@@ -11,6 +12,7 @@ export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInforma
      const arrMetar = await SFetchMetar({ icao: arrICAO });
 
      // Airport information requests
+     const depAirport = await SFetchAirportInformation({ icao: 'LTFM' });
      // Runway information requests
      // Navaid information requests
 
