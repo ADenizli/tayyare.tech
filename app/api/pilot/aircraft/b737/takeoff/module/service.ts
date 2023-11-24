@@ -12,7 +12,10 @@ export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInforma
      const arrMetar = await SFetchMetar({ icao: arrICAO });
 
      // Airport information requests
-     const depAirport = await SFetchAirportInformation({ icao: 'LTFM' });
+     const depAirportInformation = await SFetchAirportInformation({ icao: depICAO });
+     const arrAirportInformation = await SFetchAirportInformation({ icao: arrICAO });
+
+     console.log(depAirportInformation, arrAirportInformation);
      // Runway information requests
      // Navaid information requests
 
