@@ -1,10 +1,20 @@
 export default interface IAirportInformation {
-     icao: string;
-     status: string;
-     lat: string;
-     lon: string;
-     elevation: number;
-     country: string;
-     city: string;
-     wikipedia: string;
+     id: number;
+     ident: string;
+     type: string;
+     name: string;
+     latitude_deg: number;
+     longitude_deg: number;
+     elevation_ft: number;
+     continent: string;
+     iso_country: string;
+     iso_region: string;
+     municipality: string;
+     scheduled_service: string;
+     gps_code: string;
+     iata_code: string;
+     local_code: string;
+     home_link: string;
+     wikipedia_link: string;
+     keywords: string;
 }

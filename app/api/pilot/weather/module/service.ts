@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { WeatherModuleErrors } from './errors';
 import SIFetchMetar from './interfaces/SFetchMetar';
 import fetchMetar from './connections/fetchMetar';
+import { IFetchedMetar } from './interfaces/IMetar';
+import IError from './interfaces/IError';
 
 export const SFetchMetar = async ({ icao }: SIFetchMetar) => {
      // Check ICAO validation
