@@ -3,6 +3,7 @@ import { SFetchMetar } from '../../../../weather/module/service';
 import STakeoffInformationsDTO from '../dto/STakeoffDTO';
 import TakeoffModuleErrors from './errors';
 import { IFetchedMetar, IMetarData } from '@/app/api/pilot/weather/module/interfaces/IMetar';
+import { IAirportRunwayInformations } from '@/app/api/pilot/airport/module/interfaces/IAirportRunwayInformations';
 
 export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInformationsDTO) => {
      if (!depICAO) return { error: 'TM01', description: TakeoffModuleErrors['TM01'] };
@@ -21,7 +22,12 @@ export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInforma
      const arrAirportRunwayInformations = await SFetchAirportRunwayInformations({ icao: arrICAO });
 
      // Active runway choosing
-     const depMetarSeperatedWind = depMetar.data.wind;
+     const depWindDir: number = depMetar.data.wind.degrees;
+     depAirportRunwayInformations.forEach((runway: IAirportRunwayInformations) => {
+          if ((runway.le_heading_degT - depWindDir) > ) {
+          }
+     });
+     // continue from here
 
      // Navaid information requests
 
