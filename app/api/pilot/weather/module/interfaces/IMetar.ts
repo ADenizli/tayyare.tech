@@ -72,5 +72,5 @@ export interface IMetarData {
 
 export interface IFetchedMetar {
      results: number;
-     data: IMetarData;
+     data: IMetarData[];
 }

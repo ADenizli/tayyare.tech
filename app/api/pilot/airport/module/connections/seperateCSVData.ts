@@ -15,11 +15,11 @@ export default async function SeperateCSVData({ file }: IProps): Promise<any[]> 
      switch (file) {
           case 'airports':
                const rawAirportData = await file_get_contents('https://davidmegginson.github.io/ourairports-data/airports.csv');
-               const parsedAirportData = Papa.parse(rawAirportData, { header: true });
+               const parsedAirportData = Papa.parse(rawAirportData, { header: true, dynamicTyping: true });
                return parsedAirportData.data;
           case 'runways':
                const rawRunwayData = await file_get_contents('https://davidmegginson.github.io/ourairports-data/runways.csv');
-               const parsedRunwayData = Papa.parse(rawRunwayData, { header: true });
+               const parsedRunwayData = Papa.parse(rawRunwayData, { header: true, dynamicTyping: true });
                return parsedRunwayData.data;
 
           default:

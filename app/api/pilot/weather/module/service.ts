@@ -11,5 +11,6 @@ export const SFetchMetar = async ({ icao }: SIFetchMetar) => {
      if (icao.length != 4) return { error: 'WM02', description: WeatherModuleErrors['WM02'] };
 
      // Fetch metar information and return it
-     return await fetchMetar(icao);
+     const rawData: IFetchedMetar = await fetchMetar(icao);
+     return rawData.data.length > 0 ? rawData.data[0] : { error: 'WM03', description: WeatherModuleErrors['WM03'] };
 };

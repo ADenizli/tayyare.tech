@@ -28,4 +28,6 @@ export interface UARunway {
      run_log: number;
      run_elv: number;
      run_hdg: number;
+     run_lng: number;
+     run_wid: number;
 }
