@@ -17,7 +17,7 @@ export default function LoginAsPage() {
                </div>
                <div className='full-page-selection-item'>
                     <h1>Pilot</h1>
-                    <TButton onClick={() => router.push('/pilot/occ')} size='lg'>
+                    <TButton onClick={() => router.push('/pilot/createFlight')} size='lg'>
                          Login As
                     </TButton>
                </div>

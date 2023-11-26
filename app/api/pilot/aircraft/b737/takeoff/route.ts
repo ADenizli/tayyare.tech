@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
-import { STakeoffInformations } from './module/service';
+import { SInitialTakeoffInformations } from './module/service';
 
 export async function GET(req: NextApiRequest, res: NextApiResponse<any>) {
      // TODO: after heartbeat development, connect all modules
@@ -9,6 +9,6 @@ export async function GET(req: NextApiRequest, res: NextApiResponse<any>) {
 
 export async function POST(request: Request) {
      const body = await request.json();
-     const serviceResponse = await STakeoffInformations(body);
+     const serviceResponse = await SInitialTakeoffInformations(body);
      return NextResponse.json(serviceResponse, { status: 200 });
 }

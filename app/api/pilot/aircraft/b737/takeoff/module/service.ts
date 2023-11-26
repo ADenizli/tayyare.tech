@@ -6,7 +6,7 @@ import { IAirportRunwayInformations, UARunway } from '@/app/api/pilot/airport/mo
 import IError from '@/app/api/pilot/weather/module/interfaces/IError';
 import B737Limits from '../../limitations';
 
-export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInformationsDTO) => {
+export const SInitialTakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInformationsDTO) => {
      if (!depICAO) return { error: 'TM01', description: TakeoffModuleErrors['TM01'] };
      if (!arrICAO) return { error: 'TM02', description: TakeoffModuleErrors['TM02'] };
 
@@ -27,7 +27,7 @@ export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInforma
 
      // Active runway choosing
      const depWindDir: number = depMetar.wind.degrees;
-     const possibleActiveRunways: UARunway[] = [];
+     const possibleDepActiveRunways: UARunway[] = [];
 
      if (!Array.isArray(depAirportRunwayInformations)) return depAirportRunwayInformations;
 
@@ -42,7 +42,7 @@ export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInforma
           const absLe = le - depWindDir < 0 ? -(le - depWindDir) : le - depWindDir;
 
           if (absHe < absLe) {
-               possibleActiveRunways.push({
+               possibleDepActiveRunways.push({
                     run_apt: runway.airport_ident,
                     run_ident: runway.he_ident,
                     run_lat: runway.he_latitude_deg,
@@ -53,7 +53,7 @@ export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInforma
                     run_wid: runway.width_ft,
                });
           } else if (absHe > absLe) {
-               possibleActiveRunways.push({
+               possibleDepActiveRunways.push({
                     run_apt: runway.airport_ident,
                     run_ident: runway.le_ident,
                     run_lat: runway.le_latitude_deg,
@@ -65,7 +65,7 @@ export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInforma
                });
           } else {
                if (runway.he_displaced_threshold_ft < runway.le_displaced_threshold_ft) {
-                    possibleActiveRunways.push({
+                    possibleDepActiveRunways.push({
                          run_apt: runway.airport_ident,
                          run_ident: runway.he_ident,
                          run_lat: runway.he_latitude_deg,
@@ -76,7 +76,7 @@ export const STakeoffInformations = async ({ depICAO, arrICAO }: STakeoffInforma
                          run_wid: runway.width_ft,
                     });
                } else {
-                    possibleActiveRunways.push({
+                    possibleDepActiveRunways.push({
                          run_apt: runway.airport_ident,
                          run_ident: runway.le_ident,
                          run_lat: runway.le_latitude_deg,
