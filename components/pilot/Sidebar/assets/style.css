@@ -36,4 +36,7 @@
 }
 #sidebar .menu-item:hover .icon {
   color: #ffffff;
+}
+#sidebar .menu-item.active {
+  background: #c90019;
 }/*# sourceMappingURL=style.css.map */

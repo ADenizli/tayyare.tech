@@ -1,0 +1,8 @@
+#topbar {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100vw - 128px);
+  background: #2b3947;
+  font-weight: 500;
+  padding: 16px 32px;
+}/*# sourceMappingURL=style.css.map */

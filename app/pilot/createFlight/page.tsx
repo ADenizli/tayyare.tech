@@ -1,3 +1,9 @@
+import { Container } from 'reactstrap';
+
 export default function CreateFlight() {
-     return <main></main>;
+     return (
+          <section>
+               <Container fluid></Container>
+          </section>
+     );
 }
