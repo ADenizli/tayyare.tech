@@ -1,4 +1,4 @@
-import TYRIcon, { FAIcons } from '@/components/TYR-Icon';
+import TYRIcon, { FAIcons } from '@/components/TYRIcon';
 
 import './assets/style.css';
 

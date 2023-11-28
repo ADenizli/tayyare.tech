@@ -1,3 +1,19 @@
 #pilot-section {
   display: flex;
+}
+#pilot-section main {
+  width: calc(100vw - 128px);
+  overflow-x: scroll;
+}
+#pilot-section main section {
+  width: 100%;
+  height: calc(100vh - 128px);
+  padding: 64px 60px;
+}
+#pilot-section main section h3 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+#pilot-section main section .card {
+  background-color: white;
 }/*# sourceMappingURL=style.css.map */
